@@ -1,65 +1,99 @@
+/* ---------------フォント指定--------------- */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ---------------各セクションの見出しに下線--------------- */
+h2 span {
+    background: linear-gradient(transparent 96%, #FFFE03 60%);
+}
+
+/* ---------------h2の余白--------------- */
+h2 {
+    padding: 25px;
+}
+
 /* ---------------header--------------- */
-header {
+.head header {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    background-color: white;
 }
 
-header img {
+.head header img {
     height: 50px;
     margin: 10px;
 }
 
-ul {
+.head header ul {
     display: flex;
-    margin-right: 10px;
 }
 
-li {
+.head header ul li {
     margin: 10px;
 }
 
 /* ---------------TOP-background--------------- */
 .background {
-    height: 700px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url(./img/TOP.jpg);
+    background-size: cover;
 }
 
 .background img {
-    margin-bottom: 5px;
-    width: 35%;
+    height: 30%;
+    margin: 10px;
 }
 
-.background .text {
-    width: fit-content;
-}
-
-.background h1 {
-    margin-top: 5px;
+.background h1 span {
     font-size: 30px;
     font-weight: bold;
-    border-top: 2px solid rgba(1, 12, 70, 0.6);
-    border-bottom: 2px solid rgba(1, 12, 70, 0.6);
+    border-top: 3px solid yellow;
+    border-bottom: 3px solid yellow;
 }
 
 /* ---------------パラセーリングの魅力--------------- */
 .section1 {
-    margin: 0 100px 100px;
+    height: 1000px;
+    background-image: url(./img/船.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.section1::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.5;
 }
 
 .section1 h2 {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
+    position: relative;
+    z-index: 3;
 }
 
 .section1 .container1 {
     display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
 }
 
 .container2 {
@@ -78,23 +112,255 @@ li {
 }
 
 .section1 .container1 .text p {
-    padding-top: 20px;
     font-size: 20px;
+    font-weight: bold;
+    margin-top: 200px;
+    margin-right: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
 }
 
 .parasailing1 {
-    width: 400px;
+    width: 450px;
     transform: rotate(-4deg);
     border: 10px solid #fff;
+    position: absolute;
+    top: 100px;
+    right: 130px;
 }
 
 .parasailing2 {
-    width: 260px;
+    width: 300px;
     transform: rotate(5deg);
     position: absolute;
-    top: 100px;
-    right: 105px;
+    top: 250px;
+    right: 25px;
     border: 10px solid #fff;
 }
 
 /* ---------------参加までの流れ--------------- */
+.section2 {
+    padding: 50px
+}
+
+.section2 h2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section2 .container1 {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.section2 .container1 ul li h3 {
+    margin: 0 0 20px;
+    font-size: 28px;
+    border: none;
+    border-bottom: 3px solid yellow;
+    text-align: left;
+}
+
+.section2 .container1 ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.contents {
+    display: flex;
+}
+
+.section2 .container1 .contents .image {
+    width: 35%;
+}
+
+.section2 .container1 .contents .image img {
+    border: 10px solid #fff;
+}
+
+.section2 .container1 .contents .text {
+    padding: 0 0 0 32px;
+    width: 75%;
+}
+
+/* ---------------プラン・料金--------------- */
+.section3 {
+    height: 800px;
+    background-image: url(./img/足元.webp);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding: 25px 80px;
+}
+
+.section3::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.5;
+}
+
+.section3 .container1 {
+    display: flex;
+    position: relative;
+    z-index: 3;
+}
+
+.section3 .container1 .box {
+    width: 30%;
+    border: 2px solid yellow;
+    margin: 0 1.1% 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.section3 h2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.section3 .container1 .box .image img {
+    display: block;
+    width: 100%;
+}
+
+.section3 .container1 .box .text .title {
+    margin: 0;
+    border: none;
+    padding: 8px 4px 8px 12px;
+    font-size: 20px;
+}
+
+.section3 .container1 .box .text .price {
+    padding: 4px 12px 4px 12px;
+    font-size: 20px;
+    color: #884898;
+    font-weight: bold;
+    text-align: right;
+}
+
+.section3 .container1 .box .text .Explanatory {
+    padding: 4px 4px 4px 12px;
+}
+
+.section3 .container1 .box a.btn--yellow {
+    color: #000;
+    background-color: #fff100;
+    border-bottom: 5px solid #ccc100;
+    display: block;
+    height: 50px;
+    text-align: center;
+    padding: 10px 10px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.section3 .container1 .box a.btn--yellow:hover {
+    margin-top: 3px;
+    color: #000;
+    background: #fff20a;
+    border-bottom: 2px solid #ccc100;
+}
+
+/* ---------------予約フォーム--------------- */
+.section4 h2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section4 .container1 p {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin: 25px 0;
+}
+
+form {
+    width: 460px;
+    margin: 25px auto;
+}
+
+.item {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.label {
+    float: left;
+    margin-right: 20px;
+    width: 135px;
+    border-left: solid 4px yellow;
+    padding-left: 10px;
+}
+
+.inputs {
+    float: left;
+    width: 300px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea {
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+textarea {
+    width: 300px;
+}
+
+.item_btn {
+    background-color: yellow;
+    border: solid 1px #aaa;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+/* ---------------アクセス--------------- */
+.section5 h2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section5 .access {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.section5 .foot {
+    padding-left: 50px;
+}
+
+
+iframe {
+    width: 600px;
+    height: 400px;
+}
+
+.section5 img {
+    height: 150px;
+}
+
+.section5 .contact_address {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
